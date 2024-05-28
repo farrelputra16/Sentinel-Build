@@ -32,6 +32,10 @@ Route::get('/app', function () {
     return view('app');
 })->name('app');
 
+Route::get('/app_pekerja', function () {
+    return view('app_pekerja');
+})->name('app_pekerja');
+
 Route::get('/accounts', function () {
     return view('accounts');
 })->name('accounts');
