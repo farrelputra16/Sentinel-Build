@@ -27,6 +27,6 @@ class CheckinController extends Controller
             'jam_berakhir' => $request->jam_berakhir,
         ]);
 
-        return redirect()->back()->with('success', 'Check-in telah berhasil!');
+        return redirect()->back()->with('success', 'Check-in berhasil!');
     }
 }
