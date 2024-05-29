@@ -7,6 +7,7 @@ use App\Http\Controllers\Create_adminController;
 use App\Http\Controllers\Create_pekerjaController;
 use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\CheckinController;
 
 Route::get('/login_pekerja', function () {
     return view('login_pekerja');
@@ -31,6 +32,10 @@ Route::get('/auth', function () {
 Route::get('/app', function () {
     return view('app');
 })->name('app');
+
+Route::get('/app_pekerja', function () {
+    return view('app_pekerja');
+})->name('app_pekerja');
 
 Route::get('/accounts', function () {
     return view('accounts');
@@ -57,3 +62,6 @@ Route::post('/permission', [PermissionController::class, 'submitForm'])->name('p
 
 Route::get('/sib-form', [SIBFormController::class, 'index']);
 Route::post('/sib-form/submit', [SIBFormController::class, 'submit'])->name('sib-form.submit');
+
+Route::get('/checkin', [CheckinController::class, 'showForm'])->name('checkin.form');
+Route::post('/checkin', [CheckinController::class, 'submitForm'])->name('checkin.submit');
