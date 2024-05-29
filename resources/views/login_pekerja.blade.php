@@ -69,7 +69,7 @@
                     <div class="card">
                         <img src = "{{ asset('/storage/Asset/LogoSentinelBuild.jpg') }}" alt="Description of the image"  class="image"/>
                         <p class="card-header">
-                            Masuk Sebagai Pekerja
+                            Masuk Sebagai Pekerja 
                         </p>
                         <div class="card-body">
                             <form method="post" action="{{ route('login') }}">
