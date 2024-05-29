@@ -72,7 +72,7 @@
                             Masuk Sebagai Pekerja 
                         </p>
                         <div class="card-body">
-                            <form method="post" action="{{ route('login') }}">
+                            <form method="post" action="{{ route('login_pekerja') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Nama</label>
