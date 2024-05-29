@@ -42,26 +42,20 @@
                 </div>
             </div>
             <ul class="nav flex-column">
-                <li class="nav-item" id="dashboard">
-                    <div class="d-flex flex-row align-items-center mb-2">
-                    <img src="{{ asset('/storage/Asset/home.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/index" class="nav-link" onclick="changeContent('Dashboard')">Dashboard</a>
-                    </div>
-                </li>
-                <li class="nav-item" id="workhour">
-                    <div class="d-flex flex-row align-items-center mb-2">
-                    <img src="{{ asset('/storage/Asset/clock.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/workhour" class="nav-link" onclick="changeContent('Workhour')">Workhour</a>
-                </li>
-                <li class="nav-item" id="accounts">
+                <li class="nav-item" id="checkin">
                     <div class="d-flex flex-row align-items-center mb-2">
                     <img src="{{ asset('/storage/Asset/person.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/accounts" class="nav-link" onclick="changeContent('Accounts')">Accounts</a>
+                    <a href="http://127.0.0.1:8000/checkin" class="nav-link" onclick="changeContent('Checkin')">Checkin</a>
                 </li>
-                <li class="nav-item" id="authorization">
+                <li class="nav-item" id="absent">
                     <div class="d-flex flex-row align-items-center mb-2">
-                    <img src="{{ asset('/storage/Asset/shield.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/auth" class="nav-link" onclick="changeContent('Authorization')">Authorization</a>
+                    <img src="{{ asset('/storage/Asset/clock.png') }}" alt="" srcset="" class="icon">
+                    <a href="http://127.0.0.1:8000/auth" class="nav-link" onclick="changeContent('Absent')">Absent</a>
+                </li>
+                <li class="nav-item" id="permission">
+                    <div class="d-flex flex-row align-items-center mb-2">
+                    <img src="{{ asset('/storage/Asset/email.png') }}" alt="" srcset="" class="icon">
+                    <a href="http://127.0.0.1:8000/permission" class="nav-link" onclick="changeContent('Permission')">Permission</a>
                 </li>
             </ul>
         </nav>
