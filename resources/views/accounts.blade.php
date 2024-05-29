@@ -29,7 +29,7 @@
             </div>
             <div class="d-flex justify-content-between">
                 <button type="button" class="btn btn-secondary" onclick="window.history.back();">Cancel</button>
-                <button type="submit" class="btn btn-primary">Submit </button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
     </div>
