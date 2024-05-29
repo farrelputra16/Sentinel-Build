@@ -59,7 +59,11 @@
                         background-color: #0056b3;
 
                     }
-
+                    
+                    .link{
+                        margin-top: 15px;
+                        text-align: center;
+                    }
                 </style>
 </head>
 <body>
@@ -72,7 +76,7 @@
                             Login Admin
                         </p>
                         <div class="card-body">
-                            <form method="post" action="{{ route('login') }}">
+                            <form method="post" action="{{ route('login_admin') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Nama</label>
@@ -85,6 +89,9 @@
                                 <center>
                                     <button type="submit" class="btn btn-primary">Login</button>
                                 </center>
+                                <div class="link">
+                                    <a href="{{ route('login_pekerja') }}">Masuk sebagai Pekerja</a>
+                                </div>
                             </form>
                         </div>
                     </div>
