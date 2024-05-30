@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Pekerjas')
+@section('title', 'Pekerja')
 
 @section('content')
 
@@ -43,7 +43,7 @@
         }
     </style>
 
-<h2>Pekerjas</h2>
+<h2>Pekerja</h2>
 
 <table class="table table-striped">
     <thead>
