@@ -13,7 +13,7 @@ class IndexController extends Controller
         return view('index', compact('worker'));
     }
 
-    public function show(Pekerja $pekerjas)
+    public function show(Pekerja $worker)
     {
         return view('show', compact('worker'));
     }
