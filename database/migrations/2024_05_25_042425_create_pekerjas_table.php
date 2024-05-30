@@ -10,7 +10,7 @@ class CreatePekerjasTable extends Migration
     {
         Schema::create('worker', function (Blueprint $table) {
             $table->string('nama');
-            $table->string('id', 15)->unique();
+            $table->string('id', 150)->unique();
             $table->timestamps();
         });
     }
