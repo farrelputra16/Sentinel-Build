@@ -27,14 +27,9 @@
             border-radius: 3px;
         }
 
-        .btn-primary {
+        .btn-warning {
             background-color: #007bff;
             color: #fff;
-        }
-
-        .btn-warning {
-            background-color: #ffc107;
-            color: #000;
         }
 
         .btn-danger {
@@ -59,9 +54,8 @@
                 <td>{{ $pekerja->nama }}</td>
                 <td>{{ $pekerja->id }}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Lihat</a>
-                    <a href="#" class="btn btn-warning">Edit</a>
                     <a href="#" class="btn btn-danger">Hapus</a>
+                    <a href="#" class="btn btn-warning">Edit</a>
                 </td>
             </tr>
         @endforeach

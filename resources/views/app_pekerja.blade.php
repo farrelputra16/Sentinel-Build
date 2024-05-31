@@ -64,7 +64,7 @@
         <div id="content" class="w-100">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <h2 id="main-title">@yield('NavTitle', 'Dashboard')</h2>
+                <h2 id="main-title">@yield('NavTitle', 'Checkin')</h2>
 
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
