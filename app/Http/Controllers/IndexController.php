@@ -7,14 +7,14 @@ use App\Models\Pekerja;
 
 class IndexController extends Controller
 {
-    public function index()
+    public function index(Pekerja $workers)
     {
-        $worker = Pekerja::all();
-        return view('index', compact('worker'));
+        $workers = Pekerja::all();
+        return view('index', compact('workers'));
     }
 
     public function show(Pekerja $pekerjas)
     {
-        return view('show', compact('worker'));
+        return view('show', compact('workers'));
     }
 }

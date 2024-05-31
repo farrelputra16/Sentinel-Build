@@ -1,40 +1,66 @@
 <?php
-// app/Http/Controllers/Auth/AdminLoginController.php
-
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\Pekerja;
 
-class AdminLoginController extends Controller
+class AdminloginController extends Controller
 {
-    public function showLoginForm()
+    // Menampilkan form login admin
+    public function showLoginAdminForm()
     {
-        return view('auth.admin-login');
+        return view('index');
     }
 
-    public function login(Request $request)
+
+    // Menangani login admin
+    public function loginAdmin(Request $request)
     {
-        // Validate the input
-        $this->validate($request, [
-            'name' => 'required',
-            'id' => 'required',
+        // Validasi input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'password' => 'required|string|min:6',
         ]);
 
-        // Authenticate the admin
-        $admin = \App\Admin::where('name', $request->input('name'))
-            ->where('id', $request->input('id'))
-            ->first();
-
-        if ($admin) {
-            // Login the admin
-            auth()->guard('admin')->login($admin);
-
-            // Redirect to the admin dashboard
-            return redirect()->route('admin.dashboard');
-        } else {
-            // Display an error message
-            return back()->withErrors(['Invalid credentials']);
+        // Logika autentikasi admin
+        // Misalnya, jika autentikasi berhasil:
+        if ($request->name == 'admin' && $request->password == 'password') {
+            return redirect()->route('admin.index');
         }
+
+        // Jika autentikasi gagal
+        return back()->withErrors(['login' => 'ID atau password salah']);
+    }
+
+    // Menampilkan form login pekerja
+    public function showLoginPekerjaForm()
+    {
+        return view('login_pekerja');
+    }
+
+    // Menangani login pekerja
+    public function loginPekerja(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'id' => 'required|string|max:255',
+        ]);
+
+        // Logika autentikasi pekerja
+        // Misalnya, jika autentikasi berhasil:
+        if ($request->name == 'pekerja' && $request->id == '12345') {
+            return redirect()->route('login-coy');
+        }
+
+        // Jika autentikasi gagal
+        return back()->withErrors(['login' => 'Nama atau ID salah']);
+    }
+
+    // Menampilkan halaman indeks
+    public function index()
+    {
+        $workers = Pekerja::all();
+        return view('index', compact('workers'));
     }
 }

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Pekerjas')
+@section('title', 'Pekerja')
 
 @section('content')
 
@@ -43,7 +43,7 @@
         }
     </style>
 
-<h2>Pekerjas</h2>
+<h2>Pekerja</h2>
 
 <table class="table table-striped">
     <thead>
@@ -54,10 +54,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($worker as $pekerja)
+        @foreach ($workers as $worker)
             <tr>
-                <td>{{ $pekerja->nama }}</td>
-                <td>{{ $pekerja->id }}</td>
+                <td>{{ $worker->nama }}</td>
+                <td>{{ $worker->id }}</td>
                 <td>
                     <a href="#" class="btn btn-primary">Lihat</a>
                     <a href="#" class="btn btn-warning">Edit</a>

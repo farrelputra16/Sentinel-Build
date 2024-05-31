@@ -21,7 +21,7 @@
             color: white;
         }
         .logo {
-            width: 50px;
+            width: 40px;
             margin-right: 10px;
         }
         .icon{
@@ -37,7 +37,7 @@
         <nav class="sidebar bg-light border-right">
             <div class="sidebar-header p-3">
                 <div class="d-flex align-items-center">
-                    <img src="{{ asset('/storage/Asset/LogoSentinelBuild.jpg') }}" alt="logo" class="logo ms-3">
+                    <img src="{{ asset('/storage/Asset/LogoSentinelBuild.png') }}" alt="logo" class="logo ms-3">
                     <h3>SentIBuild</h3>
                 </div>
             </div>
