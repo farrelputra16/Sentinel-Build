@@ -57,8 +57,8 @@ Route::post('/workers', [WorkerController::class, 'store'])->name('workers.store
 Route::get('/permission', [PermissionController::class, 'showForm'])->name('permission');
 Route::post('/permission', [PermissionController::class, 'submitForm'])->name('permission.submit');
 
-Route::get('/sib-form', [SIBFormController::class, 'index']);
-Route::post('/sib-form/submit', [SIBFormController::class, 'submit'])->name('sib-form.submit');
+Route::get('/sib/create', [SIBController::class, 'create'])->name('sib.create');
+Route::post('/sib', [SIBController::class, 'store'])->name('sib.store');
 
 Route::get('/checkin', [CheckinController::class, 'showForm'])->name('checkin.form');
 Route::post('/checkin', [CheckinController::class, 'submitForm'])->name('checkin.submit');
