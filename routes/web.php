@@ -43,7 +43,6 @@ Route::get('/accounts', function () {
 })->name('accounts');
 
 
-
 Route::get('/index', [IndexController::class, 'index'])->name('index');
 Route::get('/index/{pekerja}', [IndexController::class, 'show']);
 

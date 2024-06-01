@@ -78,7 +78,7 @@
                             Login Admin
                         </p>
                         <div class="card-body">
-                            <form method="get" action="{{ route('login_admin') }}">
+                            <form method="post" action="{{ route('login_admin') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label for="name">Nama</label>
