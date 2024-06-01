@@ -26,7 +26,7 @@
                     }
                     
                     .image{
-                        width: 80%;
+                        width: 60%;
                     }
                     
                     .form-group {
@@ -59,7 +59,11 @@
                         background-color: #0056b3;
 
                     }
-
+                    
+                    .link{
+                        margin-top: 15px;
+                        text-align: center;
+                    }
                 </style>
 </head>
 <body>
@@ -67,7 +71,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                     <div class="card">
-                        <img src = "{{ asset('/storage/Asset/LogoSentinelBuild.jpg') }}" alt="Description of the image"  class="image"/>
+                        <img src = "{{ asset('/storage/Asset/LogoSentinelBuild.png') }}" alt="Description of the image"  class="image"/>
                         <p class="card-header">
                             Masuk Sebagai Pekerja 
                         </p>
@@ -83,8 +87,11 @@
                                     <input type="text" class="form-control" id="id" name="id" required>
                                 </div>
                                 <center>
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </center>
+                                <div class="link">
+                                    <a href="{{ route('login_admin') }}">Masuk sebagai Admin</a>
+                                </div>
                             </form>
                         </div>
                     </div>

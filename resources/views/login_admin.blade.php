@@ -26,11 +26,13 @@
                     }
                     
                     .image{
-                        width: 80%;
+                        width: 60%;
                     }
                     
                     .form-group {
                         margin-bottom: 15px;
+                        display: flex;
+                        flex-direction: column;
                     }
 
                     label {
@@ -60,6 +62,10 @@
 
                     }
 
+                    .link{
+                        margin-top: 15px;
+                        text-align: center;
+                    }
                 </style>
 </head>
 <body>
@@ -67,7 +73,7 @@
         <div class="row">
             <div class="col-md-6 offset-md-3">
                     <div class="card">
-                        <img src = "{{ asset('/storage/Asset/LogoSentinelBuild.jpg') }}" alt="Description of the image"  class="image"/>
+                        <img src = "{{ asset('/storage/Asset/LogoSentinelBuild.png') }}" alt="Description of the image"  class="image"/>
                         <p class="card-header">
                             Login Admin
                         </p>
@@ -79,12 +85,15 @@
                                     <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password" required>
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
                                 <center>
-                                    <button type="submit" class="btn btn-primary">Login</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </center>
+                                <div class="link">
+                                    <a href="{{ route('login_pekerja') }}">Masuk sebagai Pekerja</a>
+                                </div>
                             </form>
                         </div>
                     </div>

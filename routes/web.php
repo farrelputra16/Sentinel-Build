@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\AdminloginController;
 use App\Http\Controllers\Create_adminController;
 use App\Http\Controllers\Create_pekerjaController;
 use App\Http\Controllers\AccountsController;
@@ -45,22 +46,24 @@ Route::get('/accounts', function () {
 Route::get('/index', [IndexController::class, 'index'])->name('index');
 Route::get('/index/{pekerja}', [IndexController::class, 'show']);
 
-Route::get('/workhour', [ActivityController::class, 'index'])->name('workhour');
+Route::get('/workhour', [ActivityController::class, 'index'])->name('workhour.index');
 Route::get('/workhour/create', [ActivityController::class, 'create'])->name('workhour.create');
 Route::post('/workhour', [ActivityController::class, 'store'])->name('workhour.store');
 
-Route::get('/accounts', [AccountsController::class, 'index'])->name('accounts.index');
-Route::get('/accounts/create/admin', [AccountsController::class, 'createAdmin'])->name('create_admin');
-Route::get('/accounts/create/pekerja', [AccountsController::class, 'createPekerja'])->name('create_pekerja');
-
-Route::post('/accounts/create/admin', [Create_adminController::class, 'storeAdmin'])->name('accounts.create.admin');
-Route::post('/accounts/create/pekerja', [Create_pekerjaController::class, 'storePekerja'])->name('accounts.create.pekerja');
+Route::get('/workers/create', [WorkerController::class, 'create'])->name('workers.create');
+Route::post('/workers', [WorkerController::class, 'store'])->name('workers.store');
 
 Route::get('/permission', [PermissionController::class, 'showForm'])->name('permission');
 Route::post('/permission', [PermissionController::class, 'submitForm'])->name('permission.submit');
 
-Route::get('/sib-form', [SIBFormController::class, 'index']);
-Route::post('/sib-form/submit', [SIBFormController::class, 'submit'])->name('sib-form.submit');
+Route::get('/sib/create', [SIBController::class, 'create'])->name('sib.create');
+Route::post('/sib', [SIBController::class, 'store'])->name('sib.store');
 
 Route::get('/checkin', [CheckinController::class, 'showForm'])->name('checkin.form');
 Route::post('/checkin', [CheckinController::class, 'submitForm'])->name('checkin.submit');
+
+Route::get('/login/admin', [AdminloginController::class, 'loginAdmin'])->name('login_admin');
+Route::get('/admin', [AdminloginController::class, 'index'])->name('admin.index');
+
+Route::get('/workers/create', [WorkerController::class, 'create'])->name('workers.create');
+Route::post('/workers', [WorkerController::class, 'store'])->name('workers.store');

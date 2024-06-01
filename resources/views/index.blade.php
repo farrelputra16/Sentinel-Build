@@ -54,10 +54,10 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($worker as $pekerja)
+        @foreach ($workers as $worker)
             <tr>
-                <td>{{ $pekerja->nama }}</td>
-                <td>{{ $pekerja->id }}</td>
+                <td>{{ $worker->nama }}</td>
+                <td>{{ $worker->id }}</td>
                 <td>
                     <a href="#" class="btn btn-primary">Lihat</a>
                     <a href="#" class="btn btn-warning">Edit</a>
