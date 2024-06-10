@@ -50,7 +50,7 @@
                 <li class="nav-item" id="absent">
                     <div class="d-flex flex-row align-items-center mb-2">
                     <img src="{{ asset('/storage/Asset/clock.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/auth" class="nav-link" onclick="changeContent('Absent')">Absent</a>
+                    <a href="http://127.0.0.1:8000/absent" class="nav-link" onclick="changeContent('Absent')">Absent</a>
                 </li>
                 <li class="nav-item" id="permission">
                     <div class="d-flex flex-row align-items-center mb-2">

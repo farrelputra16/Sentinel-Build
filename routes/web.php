@@ -62,7 +62,7 @@ Route::post('/sib', [SIBController::class, 'store'])->name('sib.store');
 Route::get('/checkin', [CheckinController::class, 'showForm'])->name('checkin.form');
 Route::post('/checkin', [CheckinController::class, 'submitForm'])->name('checkin.submit');
 
-Route::get('/login/admin', [AdminloginController::class, 'loginAdmin'])->name('login_admin');
+Route::post('/login/admin', [AdminloginController::class, 'loginAdmin'])->name('login_admin');
 Route::get('/admin', [AdminloginController::class, 'index'])->name('admin.index');
 
 Route::get('/workers/create', [WorkerController::class, 'create'])->name('workers.create');
