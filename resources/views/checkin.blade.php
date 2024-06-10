@@ -1,7 +1,6 @@
-@extends('app')
+@extends('app_pekerja')
 
-@section('title', 'Create Activity')
-@section('NavTitle', 'Add Activity')
+@section('title', 'Checkin')
 
 @section('content')
     <style>
@@ -64,27 +63,38 @@
             background-color: #6c757d;
             color: #fff;
         }
+
+        .alert-success {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
     </style>
 
     <div class="container">
         <div class="form-section">
-            <h2>Add Activity</h2>
-            <form action="{{ route('workhour.store') }}" method="POST">
+            <h2>Check-in</h2>
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <form action="{{ route('checkin.submit') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="title">Activity Title</label>
-                    <input type="text" name="title" id="title" class="form-control" required>
+                    <label for="nama_aktifitas">Nama Aktifitas</label>
+                    <input type="text" class="form-control" id="nama_aktifitas" name="nama_aktifitas" required>
                 </div>
                 <div class="form-group">
-                    <label for="start_time">Start Time</label>
-                    <input type="time" name="start_time" id="start_time" class="form-control" required>
+                    <label for="jam_mulai">Jam Mulai</label>
+                    <input type="time" class="form-control" id="jam_mulai" name="jam_mulai" required>
                 </div>
                 <div class="form-group">
-                    <label for="end_time">End Time</label>
-                    <input type="time" name="end_time" id="end_time" class="form-control" required>
+                    <label for="jam_berakhir">Jam Berakhir</label>
+                    <input type="time" class="form-control" id="jam_berakhir" name="jam_berakhir" required>
                 </div>
                 <div class="form-buttons">
-                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                    <button type="reset" class="btn btn-secondary">Clear</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
