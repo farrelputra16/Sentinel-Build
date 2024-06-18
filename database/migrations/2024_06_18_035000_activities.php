@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('checkins', function (Blueprint $table) {
+    Schema::create('activities', function (Blueprint $table) {
         $table->id();
-        $table->string('nama_aktifitas');
+        $table->string('nama_activites');
         $table->time('jam_mulai');
         $table->time('jam_berakhir');
         $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('checkins');
+        Schema::dropIfExists('activities');
     }
 };

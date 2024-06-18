@@ -10,7 +10,8 @@ class Activity extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
-        'id',
+        'nama_activites',
+        'jam_mulai',
+        'jam_berakhir', 
     ];
 }

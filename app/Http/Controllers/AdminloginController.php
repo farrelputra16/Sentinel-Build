@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pekerja;
+use App\Models\Worker;
 
 class AdminloginController extends Controller
 {
@@ -15,7 +15,9 @@ class AdminloginController extends Controller
 
     // Menangani login admin
     public function loginAdmin(Request $request)
-    {
+    {   
+
+        $name = Worker::get('username')->all();
         // Validasi input
         $request->validate([
             'name' => 'required|string|max:255',
@@ -24,8 +26,8 @@ class AdminloginController extends Controller
 
         // Logika autentikasi admin
         // Misalnya, jika autentikasi berhasil:
-        if ($request->name == 'admin' && $request->password == 'password') {
-            return redirect()->route('admin.index');
+        if ($request->name == $name && $request->password == 'password') {
+            return redirect()->route('index');
         }
 
         // Jika autentikasi gagal

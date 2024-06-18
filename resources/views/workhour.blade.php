@@ -5,20 +5,55 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-    <button class="btn btn-primary" onclick="window.location='{{ route('workhour.create') }}'">+ Add Activities</button>
-    <div id="current-time" class="btn btn-primary"></div>
-</div>
+<style>
+        .check-in-time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .time-slot {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+        }
+        .time-text {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
 
-<div class="activities-list">
-    @foreach($activities as $activity)
-        <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">{{ $activity->title }}</h5>
-                <p class="card-text">{{ $activity->start_time }} - {{ $activity->end_time }}</p>
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <button class="btn btn-primary" onclick="window.location='{{ route('workhour.create') }}'">+ Add Activities</button>
+        <div id="current-time" class="btn btn-primary"></div>
+    </div>
+    <div class="activities-list">
+        @foreach($activities as $activity)
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $activity->nama_activites }}</h5>
+                    <p class="card-text">
+                        <span class="time-text">{{ $activity->jam_mulai }}</span>
+                        <span class="time-text">{{ $activity->jam_berakhir }}</span>
+                    </p>
+                </div>
             </div>
-        </div>
-    @endforeach
+        @endforeach
+    </div>
 </div>
 
 <script>

@@ -27,11 +27,13 @@ class ActivityController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
+            'nama_activites' => 'required',
+            'jam_mulai' => 'required|date_format:H:i',
+            'jam_berakhir' => 'required|date_format:H:i',
         ]);
 
         Activity::create($request->all());
+
+        return redirect()->route('workhour.index');
     }
 }

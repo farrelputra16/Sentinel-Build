@@ -4,11 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSibsTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up()
     {
-        Schema::create('sibs', function (Blueprint $table) {
+        Schema::create('s_i_b_s', function (Blueprint $table) {
             $table->id();
             $table->string('tipe_dokumen');
             $table->date('tanggal');
@@ -26,6 +29,6 @@ class CreateSibsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('sibs');
+        Schema::dropIfExists('s_i_b_s');
     }
-}
+};
