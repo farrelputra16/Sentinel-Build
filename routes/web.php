@@ -51,8 +51,6 @@ Route::get('/workhour', [ActivityController::class, 'index'])->name('workhour.in
 Route::get('/workhour/create', [ActivityController::class, 'create'])->name('workhour.create');
 Route::post('/workhour', [ActivityController::class, 'store'])->name('workhour.store');
 
-
-
 Route::get('/permission', [PermissionController::class, 'showForm'])->name('permission');
 Route::post('/permission', [PermissionController::class, 'submitForm'])->name('permission.submit');
 
