@@ -59,11 +59,7 @@
                         background-color: #0056b3;
 
                     }
-                    
-                    .link{
-                        margin-top: 15px;
-                        text-align: center;
-                    }
+
                 </style>
 </head>
 <body>
@@ -89,9 +85,6 @@
                                 <center>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </center>
-                                <div class="link">
-                                    <a href="{{ route('login_admin') }}">Masuk sebagai Admin</a>
-                                </div>
                             </form>
                         </div>
                     </div>
