@@ -27,7 +27,7 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <input type="text" class="form-control" placeholder="Cari Nomor Document">
-            <button class="btn btn-primary ml-3">Add New</button>
+            <button class="btn btn-primary ml-3" onclick="window.location='{{ route('sib.create') }}'">Add New</button>
         </div>
         <div class="activities-list">
             @foreach($sibs as $sib)
