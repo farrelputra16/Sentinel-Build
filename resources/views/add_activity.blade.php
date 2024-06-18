@@ -72,16 +72,16 @@
             <form action="{{ route('workhour.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="title">Activity Title</label>
-                    <input type="text" name="title" id="title" class="form-control" required>
+                    <label for="nama_activites">Activity Title</label>
+                    <input type="text" name="nama_activites" id="nama_activites" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="start_time">Start Time</label>
-                    <input type="time" name="start_time" id="start_time" class="form-control" required>
+                    <label for="jam_mulai">Start Time</label>
+                    <input type="time" name="jam_mulai" id="jam_mulai" class="form-control" required>
                 </div>
                 <div class="form-group">
-                    <label for="end_time">End Time</label>
-                    <input type="time" name="end_time" id="end_time" class="form-control" required>
+                    <label for="jam_berakhir">End Time</label>
+                    <input type="time" name="jam_berakhir" id="jam_berakhir" class="form-control" required>
                 </div>
                 <div class="form-buttons">
                     <button type="reset" class="btn btn-secondary">Cancel</button>

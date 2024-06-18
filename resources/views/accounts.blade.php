@@ -101,15 +101,11 @@
                 {{ session('success') }}
             </div>
         @endif
-        <form method="POST" action="{{ route('workers.create') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('workers.store') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="first_name">First Name</label>
+                <label for="first_name">Worker Name</label>
                 <input type="text" id="first_name" name="first_name" required>
-            </div>
-            <div class="form-group">
-                <label for="last_name">Last Name</label>
-                <input type="text" id="last_name" name="last_name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -135,22 +131,14 @@
                 <input type="date" id="hired" name="hired" required>
             </div>
             <div class="form-group">
-                <label for="card_number">Card Number</label>
-                <input type="text" id="card_number" name="card_number" required>
-            </div>
-            <div class="form-group">
                 <label for="mobile_phone">Mobile Phone</label>
                 <input type="text" id="mobile_phone" name="mobile_phone" required>
-            </div>
-            <div class="form-group">
-                <label for="department">Department</label>
-                <input type="text" id="department" name="department" required>
             </div>
             <div class="form-group">
                 <label for="privilege">Privilege</label>
                 <select id="privilege" name="privilege" required>
                     <option value="admin">Admin</option>
-                    <option value="user">User</option>
+                    <option value="user">Worker</option>
                 </select>
             </div>
             <div class="form-group-photo">

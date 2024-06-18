@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pekerja;
+use App\Models\Worker;
 
 class IndexController extends Controller
 {
-    public function index(Pekerja $workers)
+    public function index()
     {
-        $workers = Pekerja::all();
+        // Paginate the workers
+        $workers = Worker::paginate(10);
+        
+        // Pass the paginated workers to the view
         return view('index', compact('workers'));
     }
 
-    public function show(Pekerja $worker)
+    public function show(Worker $worker)
     {
-        return view('show', compact('workers'));
+        return view('index', compact('workers'));
     }
 }
