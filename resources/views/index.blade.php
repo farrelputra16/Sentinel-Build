@@ -17,7 +17,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Karyawan</th>
+                            <th>Nama Pekerja</th>
+                            <th>ID</th>
                             <th>Hired</th>
                             <th>Email</th>
                             <th>Action</th>
