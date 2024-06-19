@@ -11,6 +11,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\CheckinController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SIBController;
+use App\Http\Controllers\PrimeNumberController;
 
 Route::get('/login_pekerja', function () {
     return view('login_pekerja');
@@ -19,10 +20,6 @@ Route::get('/login_pekerja', function () {
 Route::get('/login/admin', function () {
     return view('login_admin');
 })->name('login/admin');
-
-// Route::get('/index', function () {
-//     return view('index');
-// })->name('index');
 
 Route::get('/workhour', function () {
     return view('workhour');
@@ -39,7 +36,6 @@ Route::get('/app_pekerja', function () {
 Route::get('/accounts', function () {
     return view('accounts');
 })->name('accounts');
-
 
 Route::get('/index', [IndexController::class, 'index'])->name('worker.index');
 Route::get('/index/{worker}', [IndexController::class, 'show'])->name('worker.show');
@@ -68,3 +64,6 @@ Route::get('/workers/create', [AccountsController::class, 'create'])->name('work
 Route::post('/workers/create', [AccountsController::class, 'store'])->name('workers.store');
 
 Route::resource('employees', EmployeeController::class);
+
+Route::get('/', [PrimeNumberController::class, 'prime']);
+Route::post('/calculate', [PrimeNumberController::class, 'calculate']);
