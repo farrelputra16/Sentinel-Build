@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Worker;
 
-class AccountsController extends Controller
+class WorkerController extends Controller
 {
-    public function create()
+    public function index()
     {
-        return view('accounts');
+        $workers = Worker::all(); // Mengambil semua data pekerja
+
+        return view('index', compact('workers')); // Mengirimkan data pekerja ke tampilan
     }
 
     public function store(Request $request)

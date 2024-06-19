@@ -21,7 +21,7 @@
             color: white;
         }
         .logo {
-            width: 50px;
+            width: 40px;
             margin-right: 10px;
         }
         .icon{
@@ -37,7 +37,7 @@
         <nav class="sidebar bg-light border-right">
             <div class="sidebar-header p-3">
                 <div class="d-flex align-items-center">
-                    <img src="{{ asset('/storage/Asset/LogoSentinelBuild.jpg') }}" alt="logo" class="logo ms-3">
+                    <img src="{{ asset('/storage/Asset/LogoSentinelBuild.png') }}" alt="logo" class="logo ms-3">
                     <h3>SentIBuild</h3>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                 <li class="nav-item" id="absent">
                     <div class="d-flex flex-row align-items-center mb-2">
                     <img src="{{ asset('/storage/Asset/clock.png') }}" alt="" srcset="" class="icon">
-                    <a href="http://127.0.0.1:8000/auth" class="nav-link" onclick="changeContent('Absent')">Absent</a>
+                    <a href="http://127.0.0.1:8000/absent" class="nav-link" onclick="changeContent('Absent')">Absent</a>
                 </li>
                 <li class="nav-item" id="permission">
                     <div class="d-flex flex-row align-items-center mb-2">

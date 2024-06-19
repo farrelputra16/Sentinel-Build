@@ -1,29 +1,27 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SIB;
 
-class SIBFormController extends Controller
+class SIBController extends Controller
 {
     public function index()
     {
-        return view('sib-form');
+        $sibs = SIB::all();
+        return view('sib', compact('sibs'));
     }
 
-    public function submit(Request $request)
+    public function create()
     {
-        // Validasi dan proses data yang diterima dari form
-        $validatedData = $request->validate([
-            'nama_activities' => 'required|string|max:255',
-            'nama_mandor' => 'required|string|max:255',
-            'deskripsi_pekerjaan' => 'required|string',
-            'jam_mulai' => 'required|date_format:H:i',
-            'jam_selesai' => 'required|date_format:H:i',
-        ]);
+        return view('create');
+    }
 
-        // Lakukan sesuatu dengan data yang valid, misalnya simpan ke database
+    public function store(Request $request)
+    {
+        $sibs = new SIB($request->all());
+        $sibs->save();
 
-        return back()->with('success', 'Form submitted successfully!');
+        return redirect()->route('sib.create')->with('success', 'SIB berhasil ditambahkan.');
     }
 }

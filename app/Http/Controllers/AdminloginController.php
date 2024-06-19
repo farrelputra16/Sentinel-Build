@@ -1,40 +1,42 @@
 <?php
-// app/Http/Controllers/Auth/AdminLoginController.php
-
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Models\Worker;
 
-class AdminLoginController extends Controller
+class AdminloginController extends Controller
 {
-    public function showLoginForm()
+    // Menampilkan form login admin
+    public function showLoginAdminForm()
     {
-        return view('auth.admin-login');
+        return view('index');
     }
 
-    public function login(Request $request)
-    {
-        // Validate the input
-        $this->validate($request, [
-            'name' => 'required',
-            'id' => 'required',
+
+    // Menangani login admin
+    public function loginAdmin(Request $request)
+    {   
+
+        $name = Worker::get('username')->all();
+        // Validasi input
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'password' => 'required|string|min:6',
         ]);
 
-        // Authenticate the admin
-        $admin = \App\Admin::where('name', $request->input('name'))
-            ->where('id', $request->input('id'))
-            ->first();
-
-        if ($admin) {
-            // Login the admin
-            auth()->guard('admin')->login($admin);
-
-            // Redirect to the admin dashboard
-            return redirect()->route('admin.dashboard');
-        } else {
-            // Display an error message
-            return back()->withErrors(['Invalid credentials']);
+        // Logika autentikasi admin
+        // Misalnya, jika autentikasi berhasil:
+        if ($request->name == $name && $request->password == 'password') {
+            return redirect()->route('index');
         }
+
+        // Jika autentikasi gagal
+        return back()->withErrors(['login' => 'ID atau password salah']);
     }
+    public function index()
+    {
+        $workers = Pekerja::all();
+        return view('index', compact('workers'));
+    }
+
 }

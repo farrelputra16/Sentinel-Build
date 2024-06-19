@@ -1,42 +1,57 @@
 @extends('app')
 
-@section('title', 'Permission')
-@section('NavTitle', 'Permission')
+@section('title', 'Authorization')
+@section('NavTitle', 'Authorization')
 
 @section('content')
+<style>
+        
+        
+        .container {
+            margin: 20px;
+            flex-grow: 1;
+        }
+        .activities-list {
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 1rem;
+        }
+        .card-text {
+            font-size: 0.875rem;
+        }
+    </style>
     <div class="container">
-        <h2 class="mb-1">SIB Form</h2>
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        <form action="{{ route('sib-form.submit') }}" method="POST" class="w-50">
-            @csrf
-            <div class="mb-3">
-                <label for="nama_activities" class="form-label">Nama Activities</label>
-                <input type="text" class="form-control" id="nama_activities" name="nama_activities" required>
-            </div>
-            <div class="mb-3">
-                <label for="nama_mandor" class="form-label">Nama Mandor</label>
-                <input type="text" class="form-control" id="nama_mandor" name="nama_mandor" required>
-            </div>
-            <div class="mb-3">
-                <label for="deskripsi_pekerjaan" class="form-label">Deskripsi Pekerjaan</label>
-                <textarea class="form-control" id="deskripsi_pekerjaan" name="deskripsi_pekerjaan" rows="3" required></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="jam_mulai" class="form-label">Jam Mulai</label>
-                <input type="time" class="form-control" id="jam_mulai" name="jam_mulai" required>
-            </div>
-            <div class="mb-3">
-                <label for="jam_selesai" class="form-label">Jam Selesai</label>
-                <input type="time" class="form-control" id="jam_selesai" name="jam_selesai" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-secondary">Cancel</button>
-            <button type="button" class="btn btn-secondary" onclick="window.print()">Print</button>
-        </form>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <input type="text" class="form-control" placeholder="Cari Nomor Document">
+            <button class="btn btn-primary ml-3" onclick="window.location='{{ route('sib.create') }}'">Add New</button>
+        </div>
+        <div class="activities-list">
+            @foreach($sibs as $sib)
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Nomor Document : {{ $activity['document_number'] }} <br>
+                            No Revisi: {{ $activity['revision_number'] }}
+                        </h5>
+                        <p class="card-text">
+                            Tanggal: {{ $activity['date'] }} <br>
+                            Penanggung Jawab: {{ $activity['responsible_person'] }} <br>
+                            Perusahaan: {{ $activity['company'] }}
+                        </p>
+                        <p class="card-text">
+                            Tanggal Efektif: {{ $activity['effective_date'] }}<br>
+                            Type: <span style="color: {{ $activity['type'] == 'Hot Work Permit' ? 'red' : 'blue' }}">{{ $activity['type'] }}</span> <br>
+                            No: {{ $activity['number'] }}
+                        </p>
+                        <a href="#" class="btn btn-outline-secondary"><i class="fas fa-edit"></i></a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
-
-    @endsection
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+@endsection
