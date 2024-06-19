@@ -24,8 +24,16 @@
             <label for="jam_berakhir">Jam Berakhir</label>
             <input type="time" class="form-control" id="jam_berakhir" name="jam_berakhir" required>
         </div>
-        <button type="reset" class="btn btn-secondary">Clear</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary">
+            <i class="fa fa-times-circle"></i> Clear
+        </button>
+        <button type="submit" class="btn btn-primary">
+            <i class="fa fa-check-circle"></i> Submit
+        </button>
     </form>
 </div>
-    @endsection
+@endsection
+
+@push('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+@endpush
