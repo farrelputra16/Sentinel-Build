@@ -11,6 +11,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\CheckinController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SIBController;
+use App\Http\Controllers\LeapYearController;
 
 Route::get('/login_pekerja', function () {
     return view('login_pekerja');
@@ -68,3 +69,6 @@ Route::get('/workers/create', [AccountsController::class, 'create'])->name('work
 Route::post('/workers/create', [AccountsController::class, 'store'])->name('workers.store');
 
 Route::resource('employees', EmployeeController::class);
+
+Route::get('/calculate', [LeapYearController::class, 'index']);
+Route::post('/calculate', [LeapYearController::class, 'calculate']);
